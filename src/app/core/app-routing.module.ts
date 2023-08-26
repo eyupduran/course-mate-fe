@@ -28,10 +28,10 @@ const routes: Routes = [
   { path: 'my-courses', canActivate:[LoginGuard,TeacherGuard],component: MyCoursesComponent },
   { path: 'course-detail/:userId/:courseId',canActivate:[LoginGuard,TeacherGuard], component: CourseDetailComponent },
   { path: 'not-found', component: NotFoundComponent },
+  { path: 'admin',canActivate:[AdminGuard], loadChildren: () => import('../admin/admin.module').then(m => m.AdminModule) },
   { path: '**', redirectTo: '/not-found' },
 
 
-  { path: 'admin',canActivate:[AdminGuard], loadChildren: () => import('../admin/admin.module').then(m => m.AdminModule) },
 ];
 
 @NgModule({

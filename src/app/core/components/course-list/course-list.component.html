@@ -1,7 +1,7 @@
 <main *ngIf="courses.length > 0 ;else noData">
-    <div class="container-fluid bg-trasparent my-4 p-3 margin" style="position: relative;">
-        <div class="row row-cols-1 row-cols-xs-2 row-cols-sm-2 row-cols-lg-4 g-3 mt-5">
-            <div *ngFor="let course of courses" class="col mt-2">
+    <div class="container-fluid bg-trasparent my-2 p-2 margin" style="position: relative;">
+        <div class="row row-cols-1 row-cols-xs-2 row-cols-sm-2 row-cols-lg-4 g-3 mt-1">
+            <div *ngFor="let course of courses" class="col mt-1">
                 <div class="card h-auto shadow-sm">
                     <div class="card-body">
                         <h5 class="card-title">Course : {{course.courseName}}</h5>

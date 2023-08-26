@@ -10,7 +10,6 @@ const routes: Routes = [
       children: [
           { path: 'student-list', component: StudentListComponent },
           { path: 'teacher-list', component: TeacherListComponent },
-
       ]
     }
   ];
