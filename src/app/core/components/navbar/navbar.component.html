@@ -1,0 +1,30 @@
+<div class="main-2">
+  <div class="container-2">
+    <div class="navi">
+      <div class="navi-left">
+        <p class="project-name">COURSE MATE</p>
+      </div>
+      <div *ngIf="!authService.isAuthenticated()" class="navi-right">
+        <p class="navi-items" routerLink="/login">Sign In</p>
+      </div>
+      <div *ngIf="authService.isAuthenticated()" class="navi-right">
+        <div class="navi-right" *ngIf="authService.isStudent()">
+          <p class="navi-items" routerLink="/course-list">Courses</p>
+          <p class="navi-items" routerLink="/enrolled-courses">Enrolled Courses</p>
+          <p (click)="authService.logout()" class="navi-items">Log Out</p>
+        </div>
+        <div class="navi-right" *ngIf="authService.isTeacher()">
+          <p class="navi-items" routerLink="/course-add">Add Course</p>
+          <p class="navi-items" routerLink="/my-courses">Your Courses</p>
+          <p (click)="authService.logout()" class="navi-items">Log Out</p>
+        </div>
+
+        <div class="navi-right" *ngIf="authService.isAdmin()">
+          <p class="navi-items" routerLink="/admin/student-list">Students</p>
+          <p class="navi-items" routerLink="/admin/teacher-list">Teachers</p>
+          <p ü (click)="authService.logout()" class="navi-items">Log Out</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

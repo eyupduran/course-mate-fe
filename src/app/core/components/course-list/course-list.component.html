@@ -1,0 +1,26 @@
+<main *ngIf="courses.length > 0 ;else noData">
+    <div class="container-fluid bg-trasparent my-4 p-3 margin" style="position: relative;">
+        <div class="row row-cols-1 row-cols-xs-2 row-cols-sm-2 row-cols-lg-4 g-3 mt-5">
+            <div *ngFor="let course of courses" class="col mt-2">
+                <div class="card h-auto shadow-sm">
+                    <div class="card-body">
+                        <h5 class="card-title">Course : {{course.courseName}}</h5>
+                        <div class="clearfix mb-3">Detail: {{course.courseDetail}} </div>  
+                        <div class="card-title"> Instructor : {{course.teacherInfo}} </div>
+                        <div class="clearfix mb-3"> Start Date : {{course.startDate}} </div>
+                        <div class="clearfix mb-3"> End Date : {{course.endDate}} </div>
+                        <div class="clearfix mb-3">Quota: {{course.quota}}</div>  
+                        <span class="float-end price-hp">Course Fee: {{course.courseFee}} &euro;</span>  
+                        <div *ngIf="authService.isStudent() " class="text-center my-4"> <a (click)="getCourse(course.courseId)" class="btn btn-warning">Get Course</a> </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+<ng-template #noData>
+    <div class="no-data">
+        <h4>There is no course</h4>
+    </div>
+</ng-template>

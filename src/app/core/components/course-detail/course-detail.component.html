@@ -1,0 +1,35 @@
+<div *ngIf="studentsOfCourseModel.length > 0 ;else noStudent" class="content">
+    <div class="container">
+        <div class="card">
+            <p-table [value]="studentsOfCourseModel" [tableStyle]="{ 'min-width': '50rem' }">
+                <ng-template pTemplate="header">
+                    <tr>
+                        <th>Student FullName</th>
+                        <th>Email</th>
+                        <th>Student Detail</th>
+                        <th>Graduation Status</th>
+                        <th>Phone Number</th>
+                        <th>Delete From Course</th>
+                    </tr>
+                </ng-template>
+                <ng-template pTemplate="body" let-student>
+                    <tr>
+                        <td> {{student.fullName}}</td>
+                        <td> {{student.email}}</td>
+                        <td>{{student.studentDetail}}</td>
+                        <td>{{student.graduationStatus}}</td>
+                        <td>{{student.phoneNumber}}</td>
+                        <td><p-button (click)="deleteCourse(student)" label="delete" styleClass="p-button-sm p-button-danger"></p-button></td>
+                    </tr>
+                </ng-template>
+            </p-table>
+        </div>
+    </div>
+</div>
+
+
+<ng-template #noStudent>
+    <div class="no-data">
+        <h4>No student registered for the course</h4>
+    </div>
+</ng-template> 

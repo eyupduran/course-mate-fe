@@ -1,0 +1,29 @@
+<div *ngIf="enrolledCourses.length > 0 ;else noEnrolled" class="container">
+    <ul class="responsive-table">
+      <li class="table-header">
+        <div class="col col-2">Course Name</div>
+        <div class="col col-2">Course Detail</div>
+        <div class="col col-2">Instructor</div>
+        <div class="col col-2">Start Date</div>
+        <div class="col col-2">End Date</div>
+        <div class="col col-2">Course Fee</div>
+        
+      </li>
+      <li *ngFor="let course of enrolledCourses" class="table-row">
+        <div class="col col-2" data-label="Job Id">{{course.courseName}}</div>
+        <div class="col col-2" data-label="Amount">{{course.courseDetail}}</div>
+        <div class="col col-2" data-label="Amount">{{course.teacherInfo}}</div>
+        <div class="col col-2" data-label="Amount">{{course.startDate}}</div>
+        <div class="col col-2" data-label="Amount">{{course.endDate}}</div>
+        <div class="col col-2" data-label="Customer Name">{{course.courseFee}} $</div>
+      </li>
+    </ul>
+  </div>
+  <ng-template #noEnrolled>
+    <div class="no-data">
+        <h4>No registered course found</h4>
+    </div>
+</ng-template> 
+
+
+  

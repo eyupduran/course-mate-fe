@@ -1,0 +1,30 @@
+<div *ngIf="myCourses.length > 0 ;else noCourse" class="container mt-5 mb-3">
+    <div class="row">
+        <div *ngFor="let course of myCourses" class="col-md-4"> 
+            <div class="card p-3 mb-2">
+                <div class="d-flex justify-content-between">
+                    <div class="d-flex flex-row align-items-center">
+                        <div class="ms-2 c-details">
+                            <h6 class="mb-0">{{course.startDate}} - {{course.endDate}}</h6> 
+                        </div>
+                    </div>
+                    <div class="badge"> <span>Active</span> </div>
+                </div>
+                <div class="mt-5">
+                    <h5 class="heading">Course Name: {{course.courseName}}</h5>
+                    <h5 class="heading">Fee : {{course.courseFee}} $</h5>
+                    <h5 class="heading">Registered students count : {{course.studentCount}} </h5>
+
+                    <div class="mt-2">
+                        <div class="text-center w-100 my-4"> <a (click)="goCourseDetail(course)" class="btn btn-info">Details</a> </div>
+                    </div>
+                </div>
+            </div>
+        </div>    
+    </div>
+</div>
+<ng-template #noCourse>
+    <div class="no-data">
+        <h4>You haven't added any courses yet</h4>
+    </div>
+</ng-template> 

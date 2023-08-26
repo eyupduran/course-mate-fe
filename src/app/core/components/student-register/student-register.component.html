@@ -1,0 +1,21 @@
+<div class="login-clean">
+  <form [formGroup]="studentRegisterForm" method="post">
+      <h4 >Student Register Form</h4>
+      <div class="illustration"><i class="icon ion-ios-navigate"></i></div>
+      <div class="form-group"><input formControlName="firstName" class="form-control" type="text" name="Firstname" placeholder="Name"></div>
+        <div class="form-group"><input formControlName="lastName" class="form-control" type="text" name="Lastname" placeholder="Surname"></div>
+        <div class="form-group"><input formControlName="email" class="form-control" type="email" name="email" placeholder="Email"></div>
+        <div class="form-group"><input formControlName="password" class="form-control" type="password" name="password" placeholder="Password"></div>
+        <div class="form-group"><input formControlName="phoneNumber" class="form-control" type="text" name="PhoneNumber" placeholder="Phone Number"></div>
+        <div class="form-group"><input formControlName="studentDetail" class="form-control" type="text" name="Detail" placeholder="Detail"></div>
+        <div class="form-group"><input formControlName="graduationStatus" class="form-control" type="text" name="graduationStatus" placeholder="Graduation Status"></div>
+
+        <div class="form-group"><button (click)="register()" class="btn btn-primary btn-block" type="submit">Register</button></div>
+
+      <div class="forgot">
+        <span class="signup">Want to register as a teacher?
+         <label for="check" routerLink="/register-teacher">Teacher Register </label>
+        </span>
+      </div>
+    </form>
+</div>

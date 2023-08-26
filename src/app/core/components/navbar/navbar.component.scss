@@ -1,0 +1,90 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@500&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
+    background:#f1f7fc;
+
+}
+:root{
+    --Softorange: hsl(35, 77%, 62%);
+    --Softred: hsl(5, 85%, 63%);
+    --Off-white: hsl(36, 100%, 99%);
+    --Grayishblue: hsl(233, 8%, 79%);
+    --Darkgrayishblue: hsl(236, 13%, 42%);
+    --Verydarkblue: hsl(240, 100%, 5%);
+}
+.project-name{
+    font-size: 18px;
+    font-weight: 500;
+}
+.main-2{
+    width: auto;
+    height: auto;
+    display: flex;
+    justify-content: center;
+}
+.container-2{
+    width: 90%;
+    height: auto;
+}
+.link{
+    text-decoration: none;
+    color: black;
+}
+.navi{
+    display: grid;
+    grid-template-columns: 7fr 3fr;
+    grid-template-rows: auto;
+    margin-top: 20px;
+}
+.navi-right{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 500;
+}
+.navi-items{
+    cursor: pointer;
+    padding: 10px;
+    margin-left: 10px;
+}
+.navi-items:hover{
+    background-color:rgb(27, 27, 27);
+    color: var(--Softred);
+    color: white;
+    border-radius: 10px;
+}
+
+.free-signup-green{
+    background-color: #97C100;
+    border-radius: 15px;
+}
+
+
+@media (max-width:500px){
+    .main-2{
+        height: auto;
+        display: flex;
+        justify-content: center;
+    }
+    .container-2{
+        width: max-content;
+        height: auto;
+    }
+    .navi{
+        display: grid;
+        grid-template-columns: repeat(auto,1fr);
+    }
+    .nav-logo-image{
+        height: 55px;
+    }
+    .navi-items{
+        width: max-content;
+        cursor: pointer;
+        padding: 10px;
+        margin: 0;
+    }
+    
+}

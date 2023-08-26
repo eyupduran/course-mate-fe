@@ -1,0 +1,34 @@
+<div *ngIf="students.length>0;else noStudent" class="content">
+    <div class="container">
+        <div class="card">
+            <p-table [value]="students" [tableStyle]="{ 'min-width': '50rem' }">
+                <ng-template pTemplate="header">
+                    <tr>
+                        <th>Student FullName</th>
+                        <th>Email</th>
+                        <th>Student Detail</th>
+                        <th>Graduation Status</th>
+                        <th>Delete</th>
+
+                    </tr>
+                </ng-template>
+                <ng-template pTemplate="body" let-student>
+                    <tr>
+                        <td> {{student.firstName}}  {{student.lastName}}</td>
+                        <td> {{student.email}}</td>
+                        <td>{{student.studentDetail}}</td>
+                        <td>{{student.graduationStatus}}</td>
+                        <td><p-button (click)="deleteItem(student)" label="delete" styleClass="p-button-sm p-button-danger"></p-button></td>
+                    </tr>
+                </ng-template>
+            </p-table>
+        </div>
+    </div>
+</div>
+
+
+<ng-template #noStudent>
+    <div class="no-data">
+        <h4>Student account not found</h4>
+    </div>
+</ng-template> 

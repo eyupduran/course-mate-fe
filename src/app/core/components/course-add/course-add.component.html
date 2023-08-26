@@ -1,0 +1,17 @@
+<div class="form-style-5">
+    <form [formGroup]="courseAddForm">
+        <fieldset>
+            <legend><span class="number">1</span> Add your course</legend>
+
+            <input formControlName="courseName" type="text" name="field1" placeholder="Course Name *">
+            <input formControlName="courseDetail" type="text" name="field2" placeholder="Course Detail *">
+            <input formControlName="fees" type="number" name="field2" placeholder="Course Fee *">
+            <input formControlName="quota" type="number" name="field2" placeholder="Course Quota *">
+            <p>Start Date</p>
+            <input formControlName="startDate" type="date" name="field2">
+            <p>End Date</p>
+            <input formControlName="endDate" type="date" name="field2">
+        </fieldset>
+        <input (click)="addCourse()" type="submit" value="Apply" />
+    </form>
+</div>
