@@ -16,6 +16,10 @@ export class CourseDetailComponent implements OnInit {
   studentsOfCourseModel:StudentsOfCourseModel[] = []
   userıd:number
   courseId:number
+
+  isLoaded: Promise<boolean> | undefined 
+
+
   constructor(
     private activatedRoute:ActivatedRoute,
     private toastrService:ToastrService,
@@ -36,6 +40,9 @@ export class CourseDetailComponent implements OnInit {
   courseDetail(userId:number,courseId:number){
     this.studentService.getAllStudentsOfCourseDetailByTeacherId(userId,courseId).subscribe((response)=>{
       this.studentsOfCourseModel = response.data
+      if (response.data) {
+        this.isLoaded = Promise.resolve(true);
+      }
     })
   }
 

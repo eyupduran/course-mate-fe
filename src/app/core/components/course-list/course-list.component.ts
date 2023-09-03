@@ -13,6 +13,7 @@ import { AuthService } from 'src/app/core/services/auth.service';
 export class CourseListComponent implements OnInit {
   
   courses:CourseDetailModel[] = []
+  loaded: Promise<boolean> | undefined;
 
   constructor(private courseService:CourseService,
     public authService:AuthService,
@@ -27,6 +28,12 @@ export class CourseListComponent implements OnInit {
   getAllCourseDetails(){
     this.courseService.getAllCourseDetails().subscribe((response)=>{
       this.courses = response.data
+      if (response.data) {
+        this.loaded = Promise.resolve(true);
+      }
+      else{
+        this.loaded = Promise.resolve(false);
+      }
     })
   }
 

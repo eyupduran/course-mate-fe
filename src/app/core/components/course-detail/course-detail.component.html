@@ -1,4 +1,4 @@
-<div *ngIf="studentsOfCourseModel.length > 0 ;else noStudent" class="content">
+<div *ngIf="isLoaded | async ;else noStudent" class="content">
     <div class="container">
         <div class="card">
             <p-table [value]="studentsOfCourseModel" [tableStyle]="{ 'min-width': '50rem' }">

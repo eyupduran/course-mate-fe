@@ -1,4 +1,4 @@
-<main *ngIf="courses.length > 0 ;else noData">
+<main *ngIf="loaded | async  ;else noData">
     <div class="container-fluid bg-trasparent my-2 p-2 margin" style="position: relative;">
         <div class="row row-cols-1 row-cols-xs-2 row-cols-sm-2 row-cols-lg-4 g-3 mt-1">
             <div *ngFor="let course of courses" class="col mt-1">
